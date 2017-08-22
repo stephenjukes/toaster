@@ -1,0 +1,120 @@
+body {
+  text-align: center;
+}
+
+#bread {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -650px;
+}
+
+#toaster, #toasterBack {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 300px;
+  width: 500px;
+  background: linear-gradient(45deg, #77f, #ccf);
+  border-radius: 50px 50px 10px 10px;
+  border: 1px solid #ccc;
+}
+
+#toasterBack {
+    left: 50%;
+    background: pink;
+}
+
+#toaster p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  font: bold 20px Arial;
+  color: #333;
+}
+
+#moreBread {
+	position: absolute;
+	top: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 100px;
+	width: 100px;
+	border-radius: 100%;
+	background: #faa;
+	border: 2px solid #f44;
+	font: 20px Arial;
+}
+
+#progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 6px;
+  width: 78%;
+  background: #eee;
+  border-radius: 6px;
+}
+
+#progress div {
+  background: linear-gradient(#faa, #f00);
+
+}
+
+#lever {
+  float: right;
+  margin: 50px -50px 0 0;
+  height: 150px;
+  width: 50px;
+}
+
+#lever div {
+  height: 20px;
+  width: 50px;
+  border-radius: 0 10px 50px 0;
+  background: black;
+}
+
+#lever div:hover {
+  cursor: pointer;
+}
+
+#sliders {
+  margin: 220px 0 0 50px;
+  text-transform: capitalize;
+}
+
+.slider {
+  width: 300px;
+  margin: 20px;
+}
+
+.slider::before {
+  content: attr(id) ':';
+  margin-left: -55px;
+}
+
+.slider:hover {
+  cursor: pointer;
+}
+
+#eject {
+  float: right;
+  margin-right: 40px;
+  height: 50px;
+  width: 50px;
+  font: 16px/50px Arial;
+  background: #e9e9e9;
+  border: 2px solid #aaa;
+  border-radius: 100%;
+}
+
+#eject:hover {
+  cursor:pointer;
+}
+
+#eject:active {
+  background: #888;
+}
