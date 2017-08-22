@@ -1,0 +1,36 @@
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 230px;
+  margin: auto;
+  padding: 5px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #ddd;
+  box-shadow: 5px 5px 5px #ccc;
+}
+
+.output {
+  width: 96%;
+  height: 30px;
+  padding: 10px;
+  font-size: 30px;
+  text-align: right;
+  border: 2px solid #555;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.button {
+  height: 50px;
+  width: 50px;
+  background: #bbb;
+  border: 1px solid #555;
+  border-radius: 5px;
+  box-shadow: 2px 2px 0 0 gray;
+  text-align: center;
+  font: bold 30px/50px sans-serif;
+  color: #a44;
+  margin: 2px;
+}
