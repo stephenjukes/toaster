@@ -1,0 +1,134 @@
+<!DOCTYPE htlm>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="../jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+        <script src="../jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <style>
+
+            * {
+                box-sizing: border-box;
+            }
+
+            #dropdown {
+              display: none;
+              width: 250px;
+              border: 1px solid #666;
+              border-radius: 5px;
+              padding: 10px;
+              overflow: auto;
+              background: white;
+            }
+
+            #dropdown > * {
+                font: 14px/20px Arial;
+                color: #555;
+            }
+
+            #handle {
+                width: 250px;
+                margin-top: -12px;
+                padding: 10px;
+                border: 1px solid #666;
+                border-radius: 0 0 12px 12px;
+                text-align: center;
+                font: bold 15px Arial;
+                color: #555;
+                background: orange;
+            }
+
+            #handle:hover {
+                cursor: pointer;
+                background: #adf;
+            }
+
+            input {
+              display: inline-block;
+              margin: 5px 0;
+              max-width: 65%;
+            }
+
+            li {
+                height: 70px;
+                width: 100px;
+                font: 14px/70px Arial;
+                color: gray;
+                list-style: none;
+                margin-left: -40px;
+            }
+
+            li span {
+                margin-left: 120px;
+            }
+
+            #trash {
+                margin: 30px auto;
+                height: 30px;
+                width: 30px;
+                background: url('images/trash.png') no-repeat center;
+                background-size: contain;
+            }
+
+            #data * {
+                display: block;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="dropdown">
+            <label name = "slide">Add a new slide:</label>
+            <input type="text" name="slide">
+            <input type="submit" value="Add">
+
+            <ol></ol>
+            <div id="trash"></div>
+        </div>
+        <div id="handle">Add slides / Edit slide order</div>
+
+        <!--<div id="data"></div>-->
+
+        <script>
+            var slides = [];
+            var $list = $('ol').sortable();
+
+            $('#handle').on('click', function() {
+                $('#dropdown').slideToggle();
+            })
+
+            $('#trash').droppable({
+               drop: function(e, ui) {
+                  ui.draggable.remove();
+              }
+          });
+
+            var addToDropDown = function(location) {
+                var $slide = $('<li id="' + location +'"><span>' + location + '</span></li>')
+                                .css({ 'background': 'url("' + location + '") no-repeat center',
+                                       'background-size': 'cover'
+                                });
+                $('ol').append($slide);
+
+                /*///////////////////////////
+                $('#data').empty();
+                var list = $('ol li')
+                var array = $('ol').sortable('toArray');
+
+                //for (i = 0; i < array.length; i++) {
+                    $('#data').append(array[array.length - 1]);
+                //}
+                ///////////////////////////*/
+            };
+
+            $('input[type=submit]').on('click', function() {
+            var newSlide = $('input[type=text]').val()
+
+            slides.push(newSlide);
+            addToDropDown(newSlide);
+        });
+
+
+        </script>
+    </body>
+</html>
