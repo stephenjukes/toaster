@@ -29,7 +29,7 @@ function Toaster() {
 
   $('.slider').slider({
     min: 100,
-    max: 40000,
+    max: 4000,
     stop: function(e, ui) {
       $this = $(this);
       let option = e.target.id;
